@@ -1,0 +1,23 @@
+
+<h1> Here we have a selection of the latest popular movies </h1>
+
+<div class = "grid">
+
+  <div class="item" *ngFor="let movie of movies">
+
+    <div class="card-sizing">
+      <p-card>
+        <ng-template pTemplate="header">
+          <img class="img-sizing card-selectable hover12"
+               src="https://image.tmdb.org/t/p/original/{{movie.poster_path}}"
+               alt="Card image cap"
+               routerLink="">
+        </ng-template>
+        {{ movie.original_title }}
+        <ng-template pTemplate="footer">
+          {{ movie.original_title }}
+        </ng-template>
+      </p-card>
+    </div>
+  </div>
+</div>
