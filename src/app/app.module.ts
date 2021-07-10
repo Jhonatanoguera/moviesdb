@@ -11,6 +11,10 @@ import {MenubarModule} from "primeng/menubar";
 import {SharedModule} from "primeng/api";
 import {CardModule} from "primeng/card";
 import {DataViewModule} from "primeng/dataview";
+import {DividerModule} from "primeng/divider";
+import {ScrollPanelModule} from "primeng/scrollpanel";
+import {ProgressSpinnerModule} from "primeng/progressspinner";
+import {TagModule} from "primeng/tag";
 
 @NgModule({
   declarations: [
@@ -26,7 +30,11 @@ import {DataViewModule} from "primeng/dataview";
     MenubarModule,
     SharedModule,
     CardModule,
-    DataViewModule
+    DataViewModule,
+    DividerModule,
+    ScrollPanelModule,
+    ProgressSpinnerModule,
+    TagModule
   ],
   providers: [],
   bootstrap: [AppComponent]
