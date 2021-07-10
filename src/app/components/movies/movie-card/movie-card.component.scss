@@ -1,19 +1,16 @@
-.grid {
-  padding: 25px;
-  display: grid;
-  grid-template-rows:    1fr 1fr 1fr;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-row-gap:    20px;
-  grid-column-gap: 20px;
+.movie-card {
+  height: 100%;
+  width: 100%;
 }
 
 .img-sizing {
   height:100%;
   width: 100%;
+  object-fit: cover;
 }
 
 .card-header {
-  height: 600px;
+  height: 500px;
 }
 
 .selectable-p:hover {
@@ -38,6 +35,7 @@
 }
 
 .movie-title {
+  font-size: 13px;
   font-weight: 700;
 }
 

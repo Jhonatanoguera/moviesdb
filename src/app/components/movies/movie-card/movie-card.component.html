@@ -1,0 +1,44 @@
+<p-card class="movie-card">
+  <ng-template pTemplate="header">
+    <div class="card-header">
+      <p-progressSpinner *ngIf="loading"></p-progressSpinner>
+      <img [hidden]="loading" (load)="onLoad()"
+           class="img-sizing card-selectable hover12"
+           src="https://image.tmdb.org/t/p/original/{{movie.poster_path}}"
+           routerLink="">
+    </div>
+  </ng-template>
+
+  <ng-template pTemplate="content">
+    <p-divider align="center" type="dashed">
+      <div class="p-d-inline-flex p-ai-center">
+        <p class="movie-title">{{ movie.title }}</p>
+      </div>
+    </p-divider>
+
+    <p-scrollPanel
+      [style]="{
+              width: '100%',
+              height: '60px',
+              'font-size': '13px',
+              'text-align': 'justify',
+               'padding-bottom': '10px'}"
+    >
+      {{ movie.overview }}
+    </p-scrollPanel>
+    <p-divider></p-divider>
+  </ng-template>
+
+  <ng-template pTemplate="footer">
+    <div class="genre-tags tag-hover" *ngFor="let genre of transformGenres(movie.genre_ids)">
+      <p-tag value="{{genre}}"></p-tag>
+    </div>
+    <div
+      [style]="{
+                'text-align': 'center',
+                'padding-top': '10px',
+                'font-size': '13px'}">
+      <p> More Info </p>
+    </div>
+  </ng-template>
+</p-card>
