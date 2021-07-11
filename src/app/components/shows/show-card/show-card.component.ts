@@ -1,16 +1,16 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {Show} from "../show";
 import {genres_dictionary} from "../../../misc/genres/genres";
-import {Movie} from "../movie";
 
 @Component({
-  selector: 'app-movie-card',
-  templateUrl: './movie-card.component.html',
-  styleUrls: ['./movie-card.component.scss']
+  selector: 'app-show-card',
+  templateUrl: './show-card.component.html',
+  styleUrls: ['./show-card.component.scss']
 })
-export class MovieCardComponent implements OnInit {
+export class ShowCardComponent implements OnInit {
 
   loading: boolean = true;
-  @Input() movie!: Movie;
+  @Input() show!: Show;
 
   constructor() { }
 
@@ -31,10 +31,11 @@ export class MovieCardComponent implements OnInit {
       }
     }
 
-    if(list.length > 4){
-      list = list.slice(1, 4);
+    if(list.length > 3){
+      list = list.slice(0, 3);
     }
 
     return list;
   }
+
 }

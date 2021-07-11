@@ -1,0 +1,75 @@
+.movie-card {
+  height: 100%;
+  width: 100%;
+}
+
+.img-sizing {
+  height:100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-header {
+  height: 500px;
+}
+
+.selectable-p:hover {
+  cursor: pointer;
+  color: #088;
+}
+
+.card-selectable {
+  cursor: pointer;
+}
+.hover12 {
+  background: #1abc9c;
+  opacity: 1;
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+  z-index: 1;
+}
+
+
+.hover12:hover {
+  opacity: .5;
+}
+
+.movie-title {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.footer-box {
+  justify-content: space-between;
+}
+
+.genre-tags {
+  padding-right: 5px;
+  display: inline-block
+}
+
+.tag-hover {
+  opacity: 1;
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+  z-index: 1;
+}
+
+.tag-hover:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+:host {
+  ::ng-deep .p-divider.p-divider-horizontal {
+    margin: 0 0 1rem 0;
+  }
+
+  ::ng-deep .p-card .p-card-content {
+    padding: 0 0 0 0;
+  }
+
+  ::ng-deep .p-card .p-card-footer {
+    padding: 0 0 0 0;
+  }
+}

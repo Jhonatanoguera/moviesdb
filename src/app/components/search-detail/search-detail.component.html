@@ -1,15 +1,23 @@
-<p-tabView>
-  <p-tabPanel header="Movies">
+<p-tabView [(activeIndex)]="index">
+  <p-tabPanel header="Movies" [disabled]=movieR>
     <div class = "grid">
       <div *ngFor="let movieItem of movie">
         <app-movie-card class="row-sizing" [movie]=" movieItem "></app-movie-card>
       </div>
     </div>
   </p-tabPanel>
-  <p-tabPanel header="Shows">
-    <p *ngFor="let show of show"> {{ show.name }} </p>
+  <p-tabPanel header="Shows" [disabled]=showR>
+    <div class = "grid">
+      <div *ngFor="let showItem of show">
+        <app-show-card class="row-sizing" [show]=" showItem "></app-show-card>
+      </div>
+    </div>
   </p-tabPanel>
-  <p-tabPanel header="Actors">
-    <p *ngFor="let actor of actor"> {{ actor.name }} </p>
+  <p-tabPanel header="Actors" [disabled]=actorR>
+    <div class = "grid">
+      <div *ngFor="let actorItem of actor">
+        <app-actor-card class="row-sizing" [actor]=" actorItem "></app-actor-card>
+      </div>
+    </div>
   </p-tabPanel>
 </p-tabView>

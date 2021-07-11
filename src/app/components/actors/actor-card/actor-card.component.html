@@ -1,0 +1,21 @@
+<p-card class="actor-card">
+  <ng-template pTemplate="header">
+    <div class="card-header">
+      <p-progressSpinner *ngIf="loading"></p-progressSpinner>
+      <img [hidden]="loading" (load)="onLoad()"
+           class="img-sizing card-selectable hover12 image"
+           alt="Card" src="https://image.tmdb.org/t/p/original/{{actor.profile_path}}">
+      <div class="middle">
+        <div class="text">{{actor.name}}</div>
+      </div>
+    </div>
+  </ng-template>
+  <ng-template pTemplate="content">
+    <p-divider align="center" type="dashed">
+      <div class="p-d-inline-flex p-ai-center">
+        <p class="actor-title"> Popularity </p>
+      </div>
+    </p-divider>
+    <p-rating [ngModel]="actor.popularity/10" [cancel]="false" [stars]="10" [readonly]="true"></p-rating>
+  </ng-template>
+</p-card>

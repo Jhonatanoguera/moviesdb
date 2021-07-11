@@ -1,8 +1,7 @@
-
 <h1 class="movie-list-title"> Here we have a selection of the latest popular movies </h1>
 
 <div class = "grid">
   <div *ngFor="let movieItem of movies">
-    <app-movie-card class="row-sizing" [movie]=" movieItem "></app-movie-card>
+    <app-movie-card [movie]=" movieItem "></app-movie-card>
   </div>
 </div>

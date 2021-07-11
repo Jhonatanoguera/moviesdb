@@ -15,16 +15,18 @@ export class HeaderComponent implements OnInit {
     this.items = [
       {
         label: 'Movies',
-        icon: 'pi pi-fw pi-star-o',
+        icon: 'pi pi-fw pi-video',
         routerLink:"index"
       },
       {
-        label: 'Edit',
-        icon: 'pi pi-fw pi-pencil',
-        items: [
-          {label: 'Delete', icon: 'pi pi-fw pi-trash'},
-          {label: 'Refresh', icon: 'pi pi-fw pi-refresh'}
-        ]
+        label: 'Actor',
+        icon: 'pi pi-fw pi-user',
+        routerLink:"actors"
+      },
+      {
+        label: 'Shows',
+        icon: 'pi pi-fw pi-youtube',
+        routerLink:"shows"
       }
     ];
   }

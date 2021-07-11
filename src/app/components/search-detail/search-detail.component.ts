@@ -13,6 +13,10 @@ export class SearchDetailComponent implements OnInit {
   @Input() movie?: any[] = [];
   @Input() actor?: any[] = [];
   @Input() show?: any[] = [];
+  @Input() movieR: boolean = false;
+  @Input() actorR: boolean = false;
+  @Input() showR: boolean = false;
+  index: number = 0;
 
   constructor(private movieService: MoviesService,
               private route: ActivatedRoute) { }
@@ -26,7 +30,24 @@ export class SearchDetailComponent implements OnInit {
   getValue() {
     const query = String(this.route.snapshot.paramMap.get('query'));
     const type = String(this.route.snapshot.paramMap.get('type'));
-    console.log(type);
+
+    if(type === 'movies'){
+      this.movieR = false;
+      this.actorR = true;
+      this.showR = true;
+      this.index = 0;
+    } else if(type === 'actors'){
+      this.movieR = true;
+      this.actorR = false;
+      this.showR = true;
+      this.index = 2;
+    } else if(type === 'shows'){
+      this.movieR = true;
+      this.actorR = true;
+      this.showR = false;
+      this.index = 1;
+    }
+
     this.movieService.getSearchResult(query)
       .subscribe(
         data => {

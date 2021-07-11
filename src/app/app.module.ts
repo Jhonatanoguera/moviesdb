@@ -22,9 +22,14 @@ import {FormsModule} from "@angular/forms";
 import { SearchComponent } from './components/search/search.component';
 import { SearchDetailComponent } from './components/search-detail/search-detail.component';
 import { TabViewModule} from "primeng/tabview";
-import { ShowCardComponent } from './components/show-card/show-card.component';
+import { ShowCardComponent } from './components/shows/show-card/show-card.component';
 import {InputSwitchModule} from "primeng/inputswitch";
 import {TooltipModule} from "primeng/tooltip";
+import { ActorCardComponent } from './components/actors/actor-card/actor-card.component';
+import { ActorListComponent } from './components/actors/actor-list/actor-list.component';
+import { ShowListComponent } from './components/shows/show-list/show-list.component';
+import {RatingModule} from "primeng/rating";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
@@ -35,10 +40,14 @@ import {TooltipModule} from "primeng/tooltip";
     DashboardComponent,
     SearchComponent,
     SearchDetailComponent,
-    ShowCardComponent
+    ShowCardComponent,
+    ActorCardComponent,
+    ActorListComponent,
+    ShowListComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     HttpClientModule,
     ButtonModule,
     AppRoutingModule,
@@ -54,7 +63,8 @@ import {TooltipModule} from "primeng/tooltip";
     FormsModule,
     TabViewModule,
     InputSwitchModule,
-    TooltipModule
+    TooltipModule,
+    RatingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

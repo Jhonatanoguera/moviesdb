@@ -19,8 +19,20 @@ export class MoviesService {
       .get(url,  { params: { api_key: this.apiKey}});
   }
 
-  getMostPopular(): Observable<any> {
+  getMostPopularMovies(): Observable<any> {
     const url = this.apiUrl + 'movie/popular';
+    return this.http
+      .get(url,  { params: { api_key: this.apiKey}});
+  }
+
+  getMostPopularActors(): Observable<any> {
+    const url = this.apiUrl + 'person/popular';
+    return this.http
+      .get(url,  { params: { api_key: this.apiKey}});
+  }
+
+  getMostPopularShows(): Observable<any> {
+    const url = this.apiUrl + 'tv/popular';
     return this.http
       .get(url,  { params: { api_key: this.apiKey}});
   }

@@ -20,7 +20,7 @@ export class DashboardComponent implements OnInit {
   }
 
   getBackground() {
-    this.movieService.getMostPopular().subscribe(data => this.movie = data.results[0] );
+    this.movieService.getMostPopularMovies().subscribe(data => this.movie = data.results[0] );
   }
 
 }
