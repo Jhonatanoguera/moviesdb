@@ -5,7 +5,7 @@
       <img [hidden]="loading" (load)="onLoad()"
            class="img-sizing card-selectable hover12"
            src="https://image.tmdb.org/t/p/original/{{show.poster_path}}"
-           routerLink="">
+           routerLink="/show_det/{{show.id}}">
     </div>
   </ng-template>
 

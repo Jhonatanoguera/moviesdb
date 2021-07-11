@@ -1,0 +1,72 @@
+<div *ngIf="movie;  else loading "
+     class="img"
+      [ngStyle]="{
+      background: 'url('+ background + movie?.backdrop_path + ')',
+      height: '100vh'}">
+
+  <div class="opacity-layer">
+    <div class = "grid">
+      <div class="grid-item grid-item-overview-title" > Overview </div>
+      <div class="grid-item grid-item-title" > {{ movie.title }}</div>
+      <div class="grid-item grid-item-title" > </div>
+      <div class="grid-item grid-item-overview" > {{ movie.overview }} </div>
+      <div class=" grid-item-info-box" >
+        <div class="tag-align">{{ getTaglineFormat(movie.tagline) }}</div>
+        <div class="grid-item-text-to-object">
+          <div>
+            <p class="text-property"> User score: </p>
+          </div>
+          <div class="knob-object">
+            <p-knob
+              [max]="10"
+              [readonly]="true"
+              textColor="black"
+              [(ngModel)]="movie.vote_average"
+              valueColor="White"
+              rangeColor="SlateGray"></p-knob>
+          </div>
+          <div>
+            <p class="text-property"> Runtime: </p>
+          </div>
+          <div>
+            <p class="text-property-value"> {{ movie.runtime }} minutes</p>
+          </div>
+        </div>
+      </div>
+      <div class="grid-item grid-item-carousel" >
+        <p-carousel
+          *ngIf="images else loading"
+          [value]="images"
+          [autoplayInterval]="3000"
+          [circular]="true"
+          orientation="vertical"
+          verticalViewPortHeight="300px"
+          [showIndicators]="false"
+          [style]="{'width':'90%','height':'90%', 'margin-top':'2em', 'padding-left': '75px'}">
+          <ng-template let-image pTemplate="item">
+            <img class="img-sizing"
+              src="https://image.tmdb.org/t/p/original{{image.file_path}}"
+            >
+          </ng-template>
+        </p-carousel>
+      </div>
+      <div class="grid-item grid-item-trailer-container" >
+        <iframe
+          *ngIf="safeUrlTrailer else loading"
+          width="420"
+          height="345"
+          [style]="{'margin-top':'3em'}"
+          [src]="this.safeUrlTrailer"></iframe>
+      </div>
+      <div class="grid-item-poster">
+        <img class="img-sizing"
+             src="{{background + movie.poster_path}}"
+             alt="Card image cap">
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #loading>
+  <p-progressSpinner></p-progressSpinner>
+</ng-template>

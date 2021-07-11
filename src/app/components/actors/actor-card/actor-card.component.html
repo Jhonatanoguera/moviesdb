@@ -6,7 +6,7 @@
            class="img-sizing card-selectable hover12 image"
            alt="Card" src="https://image.tmdb.org/t/p/original/{{actor.profile_path}}">
       <div class="middle">
-        <div class="text">{{actor.name}}</div>
+        <div class="text" routerLink="/actor_det/{{actor.id}}">{{actor.name}}</div>
       </div>
     </div>
   </ng-template>

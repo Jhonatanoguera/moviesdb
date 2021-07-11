@@ -60,6 +60,12 @@
   cursor: pointer;
 }
 
+.more-info {
+  font-weight: 700;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 :host {
   ::ng-deep .p-divider.p-divider-horizontal {
     margin: 0 0 1rem 0;

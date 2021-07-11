@@ -60,4 +60,22 @@ export class MoviesService {
     return this.http
       .get(url,  { params: { api_key: this.apiKey, query: search }} );
   }
+
+  getMovieDetails(id: string): Observable<any> {
+    const url = this.apiUrl + 'movie/' + id + '?';
+    return this.http
+      .get(url,  { params: { api_key: this.apiKey } } );
+  }
+
+  getMovieImages(id: string): Observable<any> {
+    const url = this.apiUrl + 'movie/' + id + '/images?';
+    return this.http
+      .get(url,  { params: { api_key: this.apiKey } } );
+  }
+
+  getMovieTrailers(id: string): Observable<any> {
+    const url = this.apiUrl + 'movie/' + id + '/videos?';
+    return this.http
+      .get(url,  { params: { api_key: this.apiKey } } );
+  }
 }

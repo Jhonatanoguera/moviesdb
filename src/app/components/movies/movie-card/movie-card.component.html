@@ -5,7 +5,7 @@
       <img [hidden]="loading" (load)="onLoad()"
            class="img-sizing card-selectable hover12"
            src="https://image.tmdb.org/t/p/original/{{movie.poster_path}}"
-           routerLink="">
+           routerLink="/movie_det/{{movie.id}}">
     </div>
   </ng-template>
 
@@ -38,7 +38,7 @@
                 'text-align': 'center',
                 'padding-top': '10px',
                 'font-size': '13px'}">
-      <p> More Info </p>
+      <p class="more-info" routerLink="/movie_det/{{movie.id}}"> More Info </p>
     </div>
   </ng-template>
 </p-card>

@@ -30,6 +30,11 @@ import { ActorListComponent } from './components/actors/actor-list/actor-list.co
 import { ShowListComponent } from './components/shows/show-list/show-list.component';
 import {RatingModule} from "primeng/rating";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import { ActorDetailsComponent } from './components/actors/actor-details/actor-details.component';
+import { MovieDetailsComponent } from './components/movies/movie-details/movie-details.component';
+import { ShowDetailsComponent } from './components/shows/show-details/show-details.component';
+import {KnobModule} from "primeng/knob";
+import {CarouselModule} from "primeng/carousel";
 
 @NgModule({
   declarations: [
@@ -43,7 +48,10 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     ShowCardComponent,
     ActorCardComponent,
     ActorListComponent,
-    ShowListComponent
+    ShowListComponent,
+    ActorDetailsComponent,
+    MovieDetailsComponent,
+    ShowDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -64,7 +72,9 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     TabViewModule,
     InputSwitchModule,
     TooltipModule,
-    RatingModule
+    RatingModule,
+    KnobModule,
+    CarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent]
