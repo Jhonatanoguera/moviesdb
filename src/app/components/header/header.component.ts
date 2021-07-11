@@ -10,7 +10,7 @@ export class HeaderComponent implements OnInit {
 
   items: MenuItem[] = [];
 
-
+  searchTerm: string = '';
 
   constructor() { }
 

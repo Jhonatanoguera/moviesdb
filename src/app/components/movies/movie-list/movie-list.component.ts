@@ -18,6 +18,6 @@ export class MovieListComponent implements OnInit {
   }
 
   getMovies() {
-    this.movieService.getRequest().subscribe(data => this.movies = data.results );
+    this.movieService.getNowPlaying().subscribe(data => this.movies = data.results );
   }
 }

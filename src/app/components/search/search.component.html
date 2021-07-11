@@ -1,0 +1,7 @@
+<span class="p-input-icon-left">
+  <i class="pi pi-search"></i>
+  <input #searchBox type="text" pInputText
+         (keyup.enter)="querySearch()"
+         [(ngModel)]="searchTerm"
+         placeholder="Search">
+</span>

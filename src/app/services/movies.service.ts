@@ -13,9 +13,21 @@ export class MoviesService {
 
   constructor(private http: HttpClient) { }
 
-  getRequest(): Observable<any> {
+  getNowPlaying(): Observable<any> {
     const url = this.apiUrl + 'movie/now_playing';
     return this.http
       .get(url,  { params: { api_key: this.apiKey}});
+  }
+
+  getMostPopular(): Observable<any> {
+    const url = this.apiUrl + 'movie/popular';
+    return this.http
+      .get(url,  { params: { api_key: this.apiKey}});
+  }
+
+  getSearchResult(search: string): Observable<any> {
+    const url = this.apiUrl + 'search/multi';
+    return this.http
+      .get(url,  { params: { api_key: this.apiKey, query: search }} );
   }
 }

@@ -17,6 +17,12 @@ import {ProgressSpinnerModule} from "primeng/progressspinner";
 import {TagModule} from "primeng/tag";
 import { MovieCardComponent } from './components/movies/movie-card/movie-card.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import {InputTextModule} from "primeng/inputtext";
+import {FormsModule} from "@angular/forms";
+import { SearchComponent } from './components/search/search.component';
+import { SearchDetailComponent } from './components/search-detail/search-detail.component';
+import { TabViewModule} from "primeng/tabview";
+import { ShowCardComponent } from './components/show-card/show-card.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +30,10 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     MovieListComponent,
     HeaderComponent,
     MovieCardComponent,
-    DashboardComponent
+    DashboardComponent,
+    SearchComponent,
+    SearchDetailComponent,
+    ShowCardComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +47,10 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     DividerModule,
     ScrollPanelModule,
     ProgressSpinnerModule,
-    TagModule
+    TagModule,
+    InputTextModule,
+    FormsModule,
+    TabViewModule
   ],
   providers: [],
   bootstrap: [AppComponent]

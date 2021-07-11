@@ -1,3 +1,21 @@
-<h1>
-  Dashboard test
-</h1>
+<div *ngIf="movie;  else loading "
+  class="img"
+  [ngStyle]="{
+  background: 'url('+ background + movie?.backdrop_path + ')',
+  height: '100vh'}">
+
+  <div class="opacity-layer">
+    <div class="search-box-container">
+      <p>
+
+        Welcome to the movies database
+
+      </p>
+    </div>
+  </div>
+</div>
+
+<ng-template #loading>
+  <p-progressSpinner></p-progressSpinner>
+</ng-template>
+

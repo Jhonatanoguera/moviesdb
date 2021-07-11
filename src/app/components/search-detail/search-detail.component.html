@@ -1,0 +1,15 @@
+<p-tabView>
+  <p-tabPanel header="Movies">
+    <div class = "grid">
+      <div *ngFor="let movieItem of movie">
+        <app-movie-card class="row-sizing" [movie]=" movieItem "></app-movie-card>
+      </div>
+    </div>
+  </p-tabPanel>
+  <p-tabPanel header="Shows">
+    <p *ngFor="let show of show"> {{ show.name }} </p>
+  </p-tabPanel>
+  <p-tabPanel header="Actors">
+    <p *ngFor="let actor of actor"> {{ actor.name }} </p>
+  </p-tabPanel>
+</p-tabView>
