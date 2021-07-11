@@ -27,6 +27,7 @@ export class SearchDetailComponent implements OnInit {
     })
   }
 
+
   getValue() {
     const query = String(this.route.snapshot.paramMap.get('query'));
     const type = String(this.route.snapshot.paramMap.get('type'));
@@ -36,26 +37,40 @@ export class SearchDetailComponent implements OnInit {
       this.actorR = true;
       this.showR = true;
       this.index = 0;
-    } else if(type === 'actors'){
-      this.movieR = true;
-      this.actorR = false;
-      this.showR = true;
-      this.index = 2;
+
+      this.movieService.getSearchMoviesResult(query)
+        .subscribe(
+          data => this.movie = data.results );
+
     } else if(type === 'shows'){
       this.movieR = true;
       this.actorR = true;
       this.showR = false;
       this.index = 1;
-    }
 
-    this.movieService.getSearchResult(query)
-      .subscribe(
-        data => {
-          this.search = data.results;
-          this.movie = this.getMovies(this.search);
-          this.show = this.getShows(this.search);
-          this.actor = this.getPeople(this.search);
-        });
+      this.movieService.getSearchShowResult(query)
+        .subscribe(
+          data => this.show = data.results );
+
+    } else if(type === 'actors'){
+      this.movieR = true;
+      this.actorR = false;
+      this.showR = true;
+      this.index = 2;
+
+      this.movieService.getSearchPersonResult(query)
+        .subscribe(
+          data => this.actor = data.results );
+    } else {
+      this.movieService.getSearchResult(query)
+        .subscribe(
+          data => {
+            this.search = data.results;
+            this.movie = this.getMovies(this.search);
+            this.show = this.getShows(this.search);
+            this.actor = this.getPeople(this.search);
+          });
+    }
   }
 
   getMovies(query: any): any[]{
@@ -66,7 +81,6 @@ export class SearchDetailComponent implements OnInit {
         movies.push(query[i]);
       }
     }
-    console.log('finished movies');
     return movies;
   }
 

@@ -42,4 +42,22 @@ export class MoviesService {
     return this.http
       .get(url,  { params: { api_key: this.apiKey, query: search }} );
   }
+
+  getSearchMoviesResult(search: string): Observable<any> {
+    const url = this.apiUrl + 'search/movie';
+    return this.http
+      .get(url,  { params: { api_key: this.apiKey, query: search }} );
+  }
+
+  getSearchPersonResult(search: string): Observable<any> {
+    const url = this.apiUrl + 'search/person';
+    return this.http
+      .get(url,  { params: { api_key: this.apiKey, query: search }} );
+  }
+
+  getSearchShowResult(search: string): Observable<any> {
+    const url = this.apiUrl + 'search/tv';
+    return this.http
+      .get(url,  { params: { api_key: this.apiKey, query: search }} );
+  }
 }
