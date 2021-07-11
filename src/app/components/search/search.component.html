@@ -1,6 +1,23 @@
+
+<p-inputSwitch
+  [style]="{'margin-right': '5px' }"
+  [(ngModel)]="movie"
+  [disabled]="available(actor, show)"
+  pTooltip="Mark for movies only search"></p-inputSwitch>
+<p-inputSwitch
+  [style]="{'margin-right': '5px' }"
+  [(ngModel)]="show"
+  [disabled]="available(movie, actor)"
+  pTooltip="Mark for tv shows only search"></p-inputSwitch>
+<p-inputSwitch
+  [style]="{'margin-right': '20px' }"
+  [(ngModel)]="actor"
+  [disabled]="available(movie, show)"
+  pTooltip="Mark for people only search"></p-inputSwitch>
+
 <span class="p-input-icon-left">
   <i class="pi pi-search"></i>
-  <input #searchBox type="text" pInputText
+  <input type="text" pInputText
          (keyup.enter)="querySearch()"
          [(ngModel)]="searchTerm"
          placeholder="Search">

@@ -9,9 +9,6 @@ import {MenuItem} from "primeng/api";
 export class HeaderComponent implements OnInit {
 
   items: MenuItem[] = [];
-
-  searchTerm: string = '';
-
   constructor() { }
 
   ngOnInit(): void {

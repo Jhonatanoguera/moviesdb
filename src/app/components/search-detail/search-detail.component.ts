@@ -25,6 +25,8 @@ export class SearchDetailComponent implements OnInit {
 
   getValue() {
     const query = String(this.route.snapshot.paramMap.get('query'));
+    const type = String(this.route.snapshot.paramMap.get('type'));
+    console.log(type);
     this.movieService.getSearchResult(query)
       .subscribe(
         data => {

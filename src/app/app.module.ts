@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import {Input, NgModule} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
@@ -23,6 +23,8 @@ import { SearchComponent } from './components/search/search.component';
 import { SearchDetailComponent } from './components/search-detail/search-detail.component';
 import { TabViewModule} from "primeng/tabview";
 import { ShowCardComponent } from './components/show-card/show-card.component';
+import {InputSwitchModule} from "primeng/inputswitch";
+import {TooltipModule} from "primeng/tooltip";
 
 @NgModule({
   declarations: [
@@ -50,7 +52,9 @@ import { ShowCardComponent } from './components/show-card/show-card.component';
     TagModule,
     InputTextModule,
     FormsModule,
-    TabViewModule
+    TabViewModule,
+    InputSwitchModule,
+    TooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent]

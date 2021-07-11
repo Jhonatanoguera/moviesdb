@@ -7,6 +7,7 @@ import {SearchDetailComponent} from "./components/search-detail/search-detail.co
 const routes: Routes = [
   { path: 'index', component: MovieListComponent },
   { path: 'dashboard', component: DashboardComponent },
+  { path: 'search/:type/:query', component: SearchDetailComponent },
   { path: 'search/:query', component: SearchDetailComponent },
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' }
 ];
