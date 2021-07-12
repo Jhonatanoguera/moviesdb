@@ -121,5 +121,15 @@
 
 .grid-item-trailer-container {
   grid-area: 3 / 3 / 5 / 3;
-  padding-left: 75px;
+  overflow: hidden;
+  position: relative;
+}
+
+.grid-item-trailer-container iframe {
+  border: 0;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
 }
