@@ -8,11 +8,13 @@ import {ShowListComponent} from "./components/shows/show-list/show-list.componen
 import {MovieDetailsComponent} from "./components/movies/movie-details/movie-details.component";
 import {ActorDetailsComponent} from "./components/actors/actor-details/actor-details.component";
 import {ShowDetailsComponent} from "./components/shows/show-details/show-details.component";
+import {AboutComponent} from "./components/about/about.component";
 
 const routes: Routes = [
   { path: 'index', component: MovieListComponent },
   { path: 'actors', component: ActorListComponent },
   { path: 'shows', component: ShowListComponent },
+  { path: 'about', component: AboutComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'search/:type/:query', component: SearchDetailComponent },
   { path: 'search/:query', component: SearchDetailComponent },

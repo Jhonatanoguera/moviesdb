@@ -36,6 +36,8 @@ import { ShowDetailsComponent } from './components/shows/show-details/show-detai
 import {KnobModule} from "primeng/knob";
 import {CarouselModule} from "primeng/carousel";
 import {DialogModule} from "primeng/dialog";
+import {ToastModule} from "primeng/toast";
+import { AboutComponent } from './components/about/about.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +54,8 @@ import {DialogModule} from "primeng/dialog";
     ShowListComponent,
     ActorDetailsComponent,
     MovieDetailsComponent,
-    ShowDetailsComponent
+    ShowDetailsComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
@@ -76,7 +79,8 @@ import {DialogModule} from "primeng/dialog";
     RatingModule,
     KnobModule,
     CarouselModule,
-    DialogModule
+    DialogModule,
+    ToastModule
   ],
   providers: [],
   bootstrap: [AppComponent]

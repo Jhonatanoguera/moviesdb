@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {MenuItem} from "primeng/api";
+import {Location} from "@angular/common";
 
 @Component({
   selector: 'app-header',
@@ -9,7 +10,7 @@ import {MenuItem} from "primeng/api";
 export class HeaderComponent implements OnInit {
 
   items: MenuItem[] = [];
-  constructor() { }
+  constructor(private location: Location) { }
 
   ngOnInit(): void {
     this.items = [
@@ -27,8 +28,21 @@ export class HeaderComponent implements OnInit {
         label: 'Shows',
         icon: 'pi pi-fw pi-youtube',
         routerLink:"shows"
+      },
+      {
+        label: 'About',
+        icon: 'pi pi-fw pi-question',
+        routerLink:"about"
+      },
+      {
+        icon: 'pi pi-fw pi-undo',
+        command: () => this.goBack()
       }
     ];
+  }
+
+  goBack(){
+    this.location.back();
   }
 
 }

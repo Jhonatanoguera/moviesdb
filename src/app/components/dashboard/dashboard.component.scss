@@ -8,7 +8,34 @@
 }
 
 .search-box-container {
-  padding-top: 25px;
-  width: 15%;
+  padding-top: 75px;
+  width: 35%;
   margin: auto;
+}
+
+.welcome-text {
+  font-family: 'Yellowtail', cursive;
+  font-size: 64px;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.welcome-text:hover {
+  text-shadow: 1px 1px 2px #ffffff, 0 0 25px #939393, 0 0 5px #363636;
+  -webkit-transition: .3s ease-in-out;
+  transition: .2s ease-in-out;
+  z-index: 1;
+}
+
+:host ::ng-deep {
+  .p-toast-message-custom {
+    background-color: #E1CFE7;
+    border: solid #8A427A;
+    border-width: 0 0 0 6px;
+    color: #2c1e30;
+    .p-toast-icon-close {
+      color: #2c1e30;
+    }
+  }
 }
