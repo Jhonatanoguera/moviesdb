@@ -1,1 +1,89 @@
-<p>actor-details works!</p>
+<div *ngIf="credits && actor;  else loading "
+     class="img"
+     [ngStyle]="{
+      background: 'url('+ background + credits[0].backdrop_path + ')',
+      height: '100vh'}">
+
+  <div class="opacity-layer">
+    <div class = "grid">
+      <div class="grid-item grid-item-overview-title" >
+        <p class="overview-dialog-enable" (click)="displayDialogOverview()">Biography</p>
+      </div>
+      <div class="grid-item grid-item-title" > {{ actor.name }}</div>
+      <div class="grid-item grid-item-title" > </div>
+      <div class="grid-item grid-item-overview" > {{ truncateBio(actor.biography) }} </div>
+
+
+      <div class=" grid-item-info-box" >
+        <div class="tag-align">{{ actor.birthday | date:"dd-MMM-YYYY" }}</div>
+        <div class="grid-item-text-to-object">
+          <div>
+            <p class="text-property"> Popularity: </p>
+          </div>
+          <div>
+            <p class="text-property-value"> {{ actor.popularity }} votes</p>
+          </div>
+          <div>
+            <p class="text-property"> Gender: </p>
+          </div>
+          <div>
+            <p class="text-property-value"> {{ decodeGender(actor.gender) }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="grid-item grid-item-carousel" >
+        <p-carousel
+          *ngIf="images else loading"
+          [value]="images"
+          [autoplayInterval]="3000"
+          [circular]="true"
+          orientation="vertical"
+          verticalViewPortHeight="500px"
+          [showIndicators]="false"
+          [showNavigators]="false"
+          [style]="{'width':'70%','height':'95%', 'padding-left': '75px'}">
+          <ng-template let-image pTemplate="item">
+            <img class="img-sizing"
+                 src="https://image.tmdb.org/t/p/original{{image.file_path}}"
+            >
+          </ng-template>
+        </p-carousel>
+      </div>
+      <div class="grid-item grid-item-carousel-2" >
+          <p-carousel
+            *ngIf="credits else loading"
+            [value]="credits"
+            [autoplayInterval]="3000"
+            [circular]="true"
+            orientation="vertical"
+            verticalViewPortHeight="500px"
+            [showIndicators]="false"
+            [showNavigators]="false"
+            [style]="{'width':'80%','height':'95%', 'padding-left': '150px'}"
+            pTooltip="Most popular movies or shows">
+            <ng-template let-credit pTemplate="item">
+              <img *ngIf="credit.poster_path else loading" class="img-sizing"
+                   src="https://image.tmdb.org/t/p/original{{credit.poster_path}}"
+              >
+            </ng-template>
+          </p-carousel>
+      </div>
+      <div class="grid-item-poster">
+        <img class="img-sizing"
+             src="{{background + actor.profile_path}}"
+             alt="Card image cap">
+      </div>
+    </div>
+  </div>
+  <p-dialog header="Biography" [(visible)]="displayOverview" [style]="{width: '50vw'}" [baseZIndex]="10000">
+    <p class="dialog-overview-text"> {{actor.biography}} </p>
+    <ng-template pTemplate="footer">
+      <p-button icon="pi pi-check" (click)="displayOverview=false" label="Ok" styleClass="p-button-text"></p-button>
+    </ng-template>
+  </p-dialog>
+
+</div>
+
+<ng-template #loading>
+  <p-progressSpinner></p-progressSpinner>
+</ng-template>

@@ -1,0 +1,139 @@
+.img {
+  background-size: cover !important;
+}
+
+.opacity-layer {
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.search-box-container {
+  padding-top: 25px;
+  width: 15%;
+  margin: auto;
+}
+
+
+.img-sizing {
+  height: 100%;
+  width: 100%;
+}
+
+.grid {
+  height: 100%;
+  padding: 50px;
+  display: grid;
+  grid-template-rows:    50px 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-row-gap:    20px;
+  grid-column-gap: 20px;
+}
+
+.grid-item-poster {
+  grid-area: 2 / 2 / 5 / 2;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.4);
+}
+
+.grid-item-title {
+  text-align: center;
+  padding-top: 5px;
+  font-weight: bold;
+  font-size: 30px;
+  text-shadow: 1px 1px 2px #ffffff, 0 0 25px #939393, 0 0 5px #363636;
+  font-family: 'Merriweather Sans', sans-serif;
+}
+
+.content-box {
+  background-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.grid-item-overview {
+  padding: 10px;
+  text-align: justify;
+  font-size: 20px;
+  text-shadow: 1px 1px 2px #ffffff, 0 0 25px #939393, 0 0 5px #363636;
+  font-family: 'Hind Siliguri', sans-serif;
+}
+
+.grid-item-overview-title {
+  text-align: center;
+  padding-top: 40px;
+  font-weight: bold;
+  font-size: 18px;
+  text-shadow: 1px 1px 2px #ffffff, 0 0 25px #939393, 0 0 5px #363636;
+  font-family: 'Merriweather Sans', sans-serif;
+}
+
+.grid-item-info-box {
+  height: 100%;
+  display: grid;
+  grid-template-rows:    1fr 1fr;
+  grid-template-columns: 1fr;
+  grid-row-gap:    20px;
+  grid-column-gap: 20px;
+}
+
+.grid-item-text-to-object {
+  height: 100%;
+  display: grid;
+  grid-template-rows:    1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-row-gap:    20px;
+  grid-column-gap: 20px;
+}
+
+.text-property {
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: 'Merriweather Sans', sans-serif;
+}
+
+.knob-object {
+  padding-top: 10px;
+}
+
+.tag-align{
+  padding-top: 25px;
+  width: 50%;
+  margin: auto;
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+  text-shadow: 1px 1px 2px #ffffff, 0 0 25px #939393, 0 0 5px #363636;
+  font-family: 'Merriweather Sans', sans-serif;
+  font-style: italic;
+}
+
+.text-property-value {
+  padding-top: 5px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: bold;
+  font-family: 'Merriweather Sans', sans-serif;
+}
+
+.grid-item-carousel {
+  grid-area: 3 / 1 / 5 / 1;
+}
+
+.grid-item-carousel-2 {
+  grid-area: 3 / 3 / 5 / 3;
+}
+
+.grid-item-trailer-container {
+  grid-area: 3 / 3 / 5 / 3;
+  padding-left: 75px;
+}
+
+.overview-dialog-enable {
+  cursor: pointer;
+}
+
+.dialog-overview-text {
+  padding: 10px;
+  text-align: justify;
+  font-size: 20px;
+  font-family: 'Hind Siliguri', sans-serif;
+}

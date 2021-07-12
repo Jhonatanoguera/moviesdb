@@ -35,6 +35,7 @@ import { MovieDetailsComponent } from './components/movies/movie-details/movie-d
 import { ShowDetailsComponent } from './components/shows/show-details/show-details.component';
 import {KnobModule} from "primeng/knob";
 import {CarouselModule} from "primeng/carousel";
+import {DialogModule} from "primeng/dialog";
 
 @NgModule({
   declarations: [
@@ -74,7 +75,8 @@ import {CarouselModule} from "primeng/carousel";
     TooltipModule,
     RatingModule,
     KnobModule,
-    CarouselModule
+    CarouselModule,
+    DialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -67,8 +67,26 @@ export class MoviesService {
       .get(url,  { params: { api_key: this.apiKey } } );
   }
 
+  getPersonDetails(id: string): Observable<any> {
+    const url = this.apiUrl + 'person/' + id + '?';
+    return this.http
+      .get(url,  { params: { api_key: this.apiKey } } );
+  }
+
+  getPersonCredits(id: string): Observable<any> {
+    const url = this.apiUrl + 'person/' + id + '/combined_credits?';
+    return this.http
+      .get(url,  { params: { api_key: this.apiKey } } );
+  }
+
   getMovieImages(id: string): Observable<any> {
     const url = this.apiUrl + 'movie/' + id + '/images?';
+    return this.http
+      .get(url,  { params: { api_key: this.apiKey } } );
+  }
+
+  getPersonImages(id: string): Observable<any> {
+    const url = this.apiUrl + 'person/' + id + '/images?';
     return this.http
       .get(url,  { params: { api_key: this.apiKey } } );
   }
